@@ -98,7 +98,13 @@
                             <outlet property="delegate" destination="Beq-cW-keC" id="7b1-Q4-Xi6"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Tag" id="EmW-zi-2n8"/>
+                    <navigationItem key="navigationItem" title="Tag" id="EmW-zi-2n8">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="DJm-mT-aE5">
+                            <connections>
+                                <action selector="addNewNote:" destination="Beq-cW-keC" id="2qN-1S-QOk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kkj-5F-f9I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

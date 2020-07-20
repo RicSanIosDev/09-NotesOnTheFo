@@ -10,7 +10,7 @@ import UIKit
 
 class NotesTableViewController: UITableViewController {
     
-    let notesArray = ["Compra1", "Compra2", "Compra3" ]
+    var notesArray = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,5 +99,31 @@ class NotesTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    // MARK: - Add new items in table
+    
+    @IBAction func addNewNote(_ sender: UIBarButtonItem) {
+        
+        var textField = UITextField()
+    
+        let controller = UIAlertController(title: "Añadir nueva nota", message: "", preferredStyle: .alert)
+        
+        let addAction = UIAlertAction(title: "Añadir item", style: .default, handler: { (action) in
+            self.notesArray.append(textField.text!)
+            self.tableView.reloadData()
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+        
+        controller.addAction(addAction)
+        controller.addAction(cancelAction)
+        controller.addTextField { (alertTextField) in
+            alertTextField.placeholder = "Escribe aqui tu nota"
+            textField = alertTextField
+        }
+        
+        present(controller, animated: true, completion: nil)
+    
+    }
+    
 }
