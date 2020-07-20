@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GTn-4W-vnz">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Notes on the Go-->
+        <scene sceneID="yer-1x-Ege">
+            <objects>
+                <collectionViewController id="EbI-1D-g2g" customClass="CategoriesViewController" customModule="_9_NotesOnTheFo" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="PF4-xH-rpi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2m1-pd-4Lk">
+                            <size key="itemSize" width="200" height="220"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CateroryCell" id="NEQ-d8-MZd" customClass="CategoryCellCollectionViewCell" customModule="_9_NotesOnTheFo" customModuleProvider="target">
+                                <rect key="frame" x="87" y="0.0" width="240" height="280"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="wMM-Ke-lsk">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="280"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kgG-Yo-GUm">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="226.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="kgG-Yo-GUm" secondAttribute="height" multiplier="35:33" id="wHc-sj-fBl"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="mDO-Pc-Jf9">
+                                            <rect key="frame" x="0.0" y="226.5" width="240" height="53.5"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="mDO-Pc-Jf9" firstAttribute="top" secondItem="kgG-Yo-GUm" secondAttribute="bottom" id="KQC-pM-swO"/>
+                                        <constraint firstAttribute="trailing" secondItem="mDO-Pc-Jf9" secondAttribute="trailing" id="P9b-4n-t8u"/>
+                                        <constraint firstItem="kgG-Yo-GUm" firstAttribute="top" secondItem="wMM-Ke-lsk" secondAttribute="top" id="cz0-68-l0c"/>
+                                        <constraint firstAttribute="bottom" secondItem="mDO-Pc-Jf9" secondAttribute="bottom" id="fvy-ai-Ihv"/>
+                                        <constraint firstItem="kgG-Yo-GUm" firstAttribute="leading" secondItem="wMM-Ke-lsk" secondAttribute="leading" id="hve-g5-2wF"/>
+                                        <constraint firstItem="mDO-Pc-Jf9" firstAttribute="leading" secondItem="wMM-Ke-lsk" secondAttribute="leading" id="nbh-Ho-XCU"/>
+                                        <constraint firstAttribute="trailing" secondItem="kgG-Yo-GUm" secondAttribute="trailing" id="vdx-fK-nDQ"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="240" height="280"/>
+                                <connections>
+                                    <outlet property="categoryImageView" destination="kgG-Yo-GUm" id="VWZ-oH-a84"/>
+                                    <outlet property="categoryLabel" destination="mDO-Pc-Jf9" id="oe1-K6-WlV"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="EbI-1D-g2g" id="TXk-6V-Tad"/>
+                            <outlet property="delegate" destination="EbI-1D-g2g" id="9qb-8C-CxY"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Notes on the Go" id="qyU-c5-eDw">
+                        <barButtonItem key="backBarButtonItem" title="Volver" id="w5o-rZ-4GK"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="Beq-cW-keC" kind="show" identifier="ShowNoteList" id="ViV-4O-fLS"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="btp-UH-XV1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1626.0869565217392" y="-239.0625"/>
+        </scene>
+        <!--Tag-->
+        <scene sceneID="vnM-ag-LgU">
+            <objects>
+                <tableViewController id="Beq-cW-keC" customClass="NotesTableViewController" customModule="_9_NotesOnTheFo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WsA-QV-zAE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoteCell" rowHeight="80" id="sgg-Yf-3Yy">
+                                <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sgg-Yf-3Yy" id="L95-A4-yFM">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Beq-cW-keC" id="V8m-Ji-2uh"/>
+                            <outlet property="delegate" destination="Beq-cW-keC" id="7b1-Q4-Xi6"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Tag" id="EmW-zi-2n8"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kkj-5F-f9I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2662.3188405797105" y="-239.0625"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GOj-k1-N79">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GTn-4W-vnz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="A0z-bx-eoI">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.18998533487319946" green="0.35768887400627136" blue="0.43821841478347778" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EbI-1D-g2g" kind="relationship" relationship="rootViewController" id="Ese-fh-ciN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CFl-mO-yaY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="715.94202898550725" y="-239.0625"/>
+        </scene>
+    </scenes>
+</document>
